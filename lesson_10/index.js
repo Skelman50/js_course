@@ -13,7 +13,7 @@ if ((myAge + 10) % 10 === 2 || ((myAge) + 10) % 10 === 3 || ((myAge) + 10) % 10 
 
 console.log("Мой возраст " + myAge + " " + a);
 
-const arr1 = [1, 3, -15, "asus", 56, "xiaomi", -156, 0, null, [], 26];
+const arr1 = [20, 3, 10, "asus", 56, "xiaomi", 156, 1, null, [], 26];
 let obj = {};
 let isNumber = [];
 let notNumber = [];
@@ -25,8 +25,8 @@ for (let i = 0; i < arr1.length; i++) {
 			notNumber[notNumber.length] = arr1[i];
 		}
 	}
-let max = 0;
-let min = 0;
+let max = isNumber[0];
+let min = isNumber[0];
 let sum = 0;
 let negative = [];
 
