@@ -1,9 +1,11 @@
 'use strict'
 
-const myAge = 100;
+const myAge = 4;
 let a;
 
-if ((myAge + 10) % 10 === 2 || ((myAge) + 10) % 10 === 3 || ((myAge) + 10) % 10 === 4) {
+if (myAge >= 10 && myAge <= 20) {
+	a = "лет"
+}else if ((myAge + 10) % 10 === 2 || ((myAge) + 10) % 10 === 3 || ((myAge) + 10) % 10 === 4) {
 	a = "года";
 }else if ((myAge + 10) % 10 === 5 || ((myAge) + 10) % 10 === 6 || ((myAge) + 10) % 10 === 7|| ((myAge) + 10) % 10 === 8 || ((myAge) + 10) % 10 === 9 || ((myAge) + 10) % 10 === 0) {
 	a = "лет";
@@ -13,7 +15,7 @@ if ((myAge + 10) % 10 === 2 || ((myAge) + 10) % 10 === 3 || ((myAge) + 10) % 10 
 
 console.log("Мой возраст " + myAge + " " + a);
 
-const arr1 = [20, 3, 10, "asus", 56, "xiaomi", 156, 1, null, [], 26];
+const arr1 = [-20, -3, "asus", -56, "xiaomi", -156, -3, null, [], -26];
 let obj = {};
 let isNumber = [];
 let notNumber = [];
