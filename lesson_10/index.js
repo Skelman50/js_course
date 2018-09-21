@@ -1,9 +1,9 @@
 'use strict'
 
-const myAge = 4;
+const myAge = 12;
 let a;
 
-if (myAge >= 10 && myAge <= 20) {
+if (myAge % 100 >= 10 && myAge % 100 <= 20) {
 	a = "лет"
 }else if ((myAge + 10) % 10 === 2 || ((myAge) + 10) % 10 === 3 || ((myAge) + 10) % 10 === 4) {
 	a = "года";
