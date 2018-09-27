@@ -56,7 +56,6 @@ function revers () {
 	return arr.reverse();
 }
 
-console.log(revers('123', '456', '789', '0'));
 
 
 function splitArray (arr, n) {
