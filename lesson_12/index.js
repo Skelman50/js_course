@@ -1,6 +1,5 @@
 'use strict'
 
-
 function add (str) {
 let sum = 0;
 let k = 0;
@@ -12,11 +11,11 @@ let k = 0;
 		}
 
 	 str = str.split('');
-	 if (str.length <=2) {
+	 if (str.length <2) {
 	 	k = 1;
 	 }else{
 
-	 while(str.length > 2) {
+	 while(str.length >= 2) {
 	 	k = k + 1
 	 	str.splice(0,2)
 	 }
