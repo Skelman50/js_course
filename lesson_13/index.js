@@ -23,7 +23,7 @@ function calculate () {
 			for (let j = 0; isNaN(+x) ||  /^\s*$/.test(x) || x === null; j++) {
 				x = prompt('Введите х. Для выхода наберите "exit"');
 				obj['history'].push(x);
-						if (!isNaN(+x)) {
+						if (!isNaN(+x) && x != null && !/^\s*$/.test(x)) {
 				args['x'] = +x;
 			}
 				obj['args'] = args;
@@ -34,7 +34,7 @@ function calculate () {
 			for(let j = 0; isNaN(+k) ||  /^\s*$/.test(k) || k === null; j++) {
 				k = prompt('Введите k. Для выхода наберите "exit"');
 				obj['history'].push(k);
-					if (!isNaN(+k)) {
+					if (!isNaN(+k) && k != null && !/^\s*$/.test(k)) {
 				args['k'] = +k;
 			}
 				obj['args'] = args;
@@ -45,7 +45,7 @@ function calculate () {
 			for(let j = 0; isNaN(+b) ||  /^\s*$/.test(b) || b === null; j++) {
 				b = prompt('Введите b. Для выхода наберите "exit"');
 				obj['history'].push(b);
-				if (!isNaN(+b)) {
+				if (!isNaN(+b) && b != null && !/^\s*$/.test(b)) {
 				args['b'] = +b;
 			}
 				obj['args'] = args;
@@ -62,7 +62,7 @@ function calculate () {
 				for(let j = 0; isNaN(+x) ||  /^\s*$/.test(x) || x === null; j++) {
 					x = prompt('Введите х. Для выхода наберите "exit"');
 					obj['history'].push(x);
-						if (!isNaN(+x)) {
+						if (!isNaN(+x) && x != null && !/^\s*$/.test(x)) {
 				args['x'] = +x;
 			}
 					obj['args'] = args;
@@ -76,4 +76,3 @@ function calculate () {
 	}
 	return obj;
 }
-
