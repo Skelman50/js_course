@@ -6,6 +6,7 @@ function calculate () {
 	let obj = {};
 	obj['history'] = [];
 	
+	
 	metka: for (let i = 0; i >= 0; i++) {
 	let b;
 	let k;
@@ -19,10 +20,10 @@ function calculate () {
 		if (arr[i] === "1") {
 			let args = {};
 			obj['formula'] = "y = kx + b";
-			for(let j = 0; isNaN(+x); j++) {
+			for (let j = 0; isNaN(+x) ||  /^\s*$/.test(x) || x === null; j++) {
 				x = prompt('Введите х. Для выхода наберите "exit"');
 				obj['history'].push(x);
-					if (!isNaN(+x)) {
+						if (!isNaN(+x)) {
 				args['x'] = +x;
 			}
 				obj['args'] = args;
@@ -30,7 +31,7 @@ function calculate () {
 				 break metka;
 				}
 			}
-			for(let j = 0; isNaN(+k); j++) {
+			for(let j = 0; isNaN(+k) ||  /^\s*$/.test(k) || k === null; j++) {
 				k = prompt('Введите k. Для выхода наберите "exit"');
 				obj['history'].push(k);
 					if (!isNaN(+k)) {
@@ -41,7 +42,7 @@ function calculate () {
 				 break metka;
 				}
 			}
-			for(let j = 0; isNaN(+b); j++) {
+			for(let j = 0; isNaN(+b) ||  /^\s*$/.test(b) || b === null; j++) {
 				b = prompt('Введите b. Для выхода наберите "exit"');
 				obj['history'].push(b);
 				if (!isNaN(+b)) {
@@ -58,7 +59,7 @@ function calculate () {
 		if (arr[i] === "2") {
 			let args = {};
 			obj['formula'] = "y = x^2";
-				for(let j = 0; isNaN(+x); j++) {
+				for(let j = 0; isNaN(+x) ||  /^\s*$/.test(x) || x === null; j++) {
 					x = prompt('Введите х. Для выхода наберите "exit"');
 					obj['history'].push(x);
 						if (!isNaN(+x)) {
