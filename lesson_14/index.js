@@ -34,18 +34,24 @@
 	  	 ul.append(li);
 	    }
 	}
+	return listen();
 }
 
 function listen(){
+
+let button = document.getElementsByTagName('button');
+let click = button[0];
+click.addEventListener('click',function(){
 	let el = document.getElementsByTagName('ul');
 	let elem = el[0];
 	if (elem) {
 	elem.remove();
-	return true;
+	return console.log(true);
 }
-return false;	
+console.log(false);
+});	
 }
 
-let button = document.getElementsByTagName('button');
+/*let button = document.getElementsByTagName('button');
 let click = button[0];
-click.addEventListener('click',listen);
+click.addEventListener('click',listen);*/
