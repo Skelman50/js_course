@@ -34,7 +34,6 @@
 	  	 ul.append(li);
 	    }
 	}
-	return listen();
 }
 
 function listen(){
