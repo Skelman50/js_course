@@ -74,6 +74,7 @@ function matrixDiff (array1, array2) {
 		return absDif
 	}
 
+
 function strangeSearch (array) {
 	let body = document.getElementsByTagName('body')[0];
 	for (let i = 0; i < array.length; i++) {
@@ -90,15 +91,12 @@ function strangeSearch (array) {
 	body.append(btn);
 	btn.innerText = "Search";
 
-
-
-
 	btn.addEventListener('click', function() {
 		let arr = [];
 		let inputs = document.getElementsByTagName('input');
 
 		for (let i = 0; i < inputs.length; i++){
-			if (inputs[i].value===0) {
+			if (inputs[i].value <= 0) {
 				continue;
 			}
 			arr.push(inputs[i]);
