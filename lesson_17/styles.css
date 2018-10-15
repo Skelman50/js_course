@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  
+}
+
+div {
+	display: inline-block;
+	margin-left: 15px;
+}
+
+button {
+	display: block;
+	margin-top: 15px;
+}

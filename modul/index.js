@@ -10,7 +10,6 @@
   }
 
 
-
 function compare (a, b) {
 	if (typeof(a) != 'number' || typeof(b) != 'number' ) {
 		console.log ("НЕ ЧИСЛО");
@@ -28,7 +27,6 @@ function compare (a, b) {
 		return a + " == " +  b;
 	}
 }
-
 
 
 function row (a,b,c,str) {
@@ -49,11 +47,9 @@ return arr[0] + ">" + arr[1]+ ">" + arr[2]
 }
 
 
-
 function fact(n) {
   return (n != 1) ? n * fact(n - 1) : 1;
 }
-
 
 
 function matrixDiff (array1, array2) {
@@ -78,17 +74,22 @@ function matrixDiff (array1, array2) {
 function strangeSearch (array) {
 	let body = document.getElementsByTagName('body')[0];
 	for (let i = 0; i < array.length; i++) {
-		 let blok = document.createElement('div')
+		
+		 let blok = document.createElement('div');
 		 body.append(blok);
-		 let input = document.createElement('input')
-		 blok.innerText = array[i]
-		 blok.append(input)
-		 input.type = 'number'
-		 input.setAttribute('data-name', array[i])
+		 let input = document.createElement('input');
+		 //blok.innerText = array[i];
+		 blok.append(input);
+		 input.type = 'number';
+		 input.value = 0;
+		 input.setAttribute('data-name', array[i]);
+		 blok.innerHTML = blok.innerHTML + ' '+ array[i]
 		 
 	}
+
 	let btn = document.createElement('button');
 	body.append(btn);
+	btn.id = 'go'
 	btn.innerText = "Search";
 
 	btn.addEventListener('click', function() {
@@ -96,7 +97,7 @@ function strangeSearch (array) {
 		let inputs = document.getElementsByTagName('input');
 
 		for (let i = 0; i < inputs.length; i++){
-			if (inputs[i].value <= 0) {
+			if (inputs[i].value <= 0 /*|| inputs[i].value === undefined*/) {
 				continue;
 			}
 			arr.push(inputs[i]);
@@ -119,4 +120,5 @@ function strangeSearch (array) {
 
 }
 
-strangeSearch (['Битлз','Queen','Ваня']) 
+strangeSearch(["котя", "злая"])
+

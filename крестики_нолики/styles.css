@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial;
+  
+}
+
+#wrap {
+  width: 310px;
+  height: 310px;
+}
+
+#s1,#s2,#s3,#s4,#s5,#s6,#s7,#s8,#s9 {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+}
+
+input {
+  display: none;
+}
+
+
+
