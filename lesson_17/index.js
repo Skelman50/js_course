@@ -137,9 +137,8 @@ if (+arr1[1]<13 && +arr1[0]<32 && arr1[1]!=''&& arr1[2]!='') {
  	}
 
 }
-if (arr.length<3 || arr1.length<3) {
-		div1.innerText = "Введите корректные данные (dd.mm или dd,mm)";
-		input1.value=''
+if (arr.length===2 || arr1.length===2 || arr[2]===''||arr1[2]==='') {
+		div.innerText = "Введите дату в формате(dd.mm.yyyy или dd,mm,yyyy)";
 	}
 });
 
