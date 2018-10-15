@@ -74,6 +74,9 @@ if (arr.length===3 || arr1.length===3) {
 		div1.innerText = "Введите корректные данные (dd.mm или dd,mm)";
 		input1.value=''
 	}
+	if (arr1[1]===''||arr[1]==='') {
+		div1.innerText = 'Введите дату в формате(dd.mm или dd,mm)'
+	}
 }
 
 
