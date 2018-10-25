@@ -1,8 +1,8 @@
 'use strict';
 
-function Human (name,age){
-	this.name = name;
-	this.age = age;
+function Human (obj){
+	this.name = obj.name;
+	this.age = obj.age;
 }
 
 Human.prototype.sayHello = function(){
@@ -10,9 +10,9 @@ Human.prototype.sayHello = function(){
 
 }
 
-function AlevelStudent (name,age,marks){
- Human.call(this, name,age);
-  this.marks = marks;
+function AlevelStudent (obj){
+ Human.call(this, obj);
+  this.marks = obj.marks;
 }
 
 
@@ -27,5 +27,12 @@ AlevelStudent.prototype.averageMark = function() {
 	console.log(sum/this.marks.length)
 }
 
-let human1 = new Human("Игорь",30)
-let student1 = new AlevelStudent("Игорь",30,[5,4,3,4])
+/*class Human {
+	constructor(obj) {
+		this.name = obj.name
+		this.age = obj.age
+	}
+	sayHello() {
+		console.log('jgjhh')
+	}
+}*/
