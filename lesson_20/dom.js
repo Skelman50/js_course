@@ -33,11 +33,11 @@ export default class Dom {
 	setCoordinates(coordinates) {
 		this.h1 = document.createElement('h1');
 		this.body.append(this.h1)
-		this.h1.innerText = `Страна: ${coordinates.country} \n
+		this.h1.innerText = `Страна: ${coordinates.country_name} \n
 							Город: ${coordinates.city} \n
 							Широта: ${coordinates.latitude} \n
 							Долгота: ${coordinates.longitude} \n
 							IP: ${coordinates.ip}`
 	}
-}
+};
 

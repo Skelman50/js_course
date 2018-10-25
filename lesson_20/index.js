@@ -3,28 +3,22 @@
 import LocationApi from "./location_api.js"
 import Dom from "./dom.js"
 
-export let a = new LocationApi()
+let a = new LocationApi()
 let b = new Dom()
 
-let id = setInterval(function(){
-	a.getMyIp()
 	b.showPreloader()
-
-	if (a.ip != undefined) {
-		a.getMyLocation(a.ip)	
-		clearInterval(id)			
-	}
 	
-},10)
+	let promise = new Promise(function(res,rej){
+		res(a.getMyIp())
+	})
 
+.then((res) =>res.json())
+.then((res)=>res.ip)
+.then((res)=>a.getMyLocation(res))
+.then((res)=>res.json())
+.then((res)=>b.setCoordinates(res))
+.then((res)=>b.hidePreloader())
 
-let id2 = setInterval(function(){
-	if (a.country!=undefined) {
-		b.hidePreloader()
-		b.setCoordinates(a)
-		clearInterval(id2)
-	}
-})
 
 
 
