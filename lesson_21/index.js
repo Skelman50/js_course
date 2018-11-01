@@ -38,6 +38,10 @@ let body = document.getElementsByTagName('body')[0]
 
 
 	buttonYourLocation.addEventListener('click', function(){
+		let nowDate = new Date();
+		console.log("nowDate", nowDate.getTime());
+
+		if ((((nowDate.getTime()-+localStorage.getItem("time"))/1000/60)>10)|| localStorage.getItem('time') === null)  {
 		b.reset()
 	b.showPreloader()
 
@@ -47,12 +51,29 @@ let body = document.getElementsByTagName('body')[0]
 
 		.then(ip => a.getMyLocation(ip))
 		.then(res=>res.city)
-		.then(res=>a.getMyWeather(res))
+		.then(function(res){
+			localStorage.setItem('city', res)
+			return a.getMyWeather(res)
+		})
+		.then(res=>{
+			b.setWeather(res)
+			b.hidePreloader()
+			b.setCoordinates()
+			let dateUse = new Date()
+			return localStorage.setItem('time', dateUse.getTime())
+		});
+	}else {
+		b.reset()
+		b.showPreloader()
+		let promise = new Promise(function(res,rej){
+			res(a.getMyWeather(localStorage.getItem("city")))
+	})
 		.then(res=>{
 			b.setWeather(res)
 			b.hidePreloader()
 			b.setCoordinates()
 		});
+	}
 });
 
 	buttonForFind.addEventListener('click', function(){
