@@ -39,7 +39,6 @@ let body = document.getElementsByTagName('body')[0]
 
 	buttonYourLocation.addEventListener('click', function(){
 		let nowDate = new Date();
-		console.log("nowDate", nowDate.getTime());
 
 		if ((((nowDate.getTime()-+localStorage.getItem("time"))/1000/60)>10)|| localStorage.getItem('time') === null)  {
 		b.reset()
@@ -56,31 +55,45 @@ let body = document.getElementsByTagName('body')[0]
 			return a.getMyWeather(res)
 		})
 		.then(res=>{
-			b.setWeather(res)
+			let coord = {}
+			let main = {}
+			let wind = {}
+			let weather = [{}]
+			let sys = {}
+			let param = {coord,main,wind,weather,sys};
+			param.coord.lon = res.coord.lon;
+			param.coord.lat = res.coord.lat;
+		    param.main.temp = res.main.temp;
+		    param.main.pressure = res.main.pressure;
+		    param.wind.speed = res.wind.speed;
+		    param.weather[0].description = res.weather[0].description
+		    param.dt = res.dt;
+		    param.name = res.name
+		    param.sys.sunrise = res.sys.sunrise;
+		    param.sys.sunset = res.sys.sunset;
+		    param.sys.country = res.sys.country;
+		    let stringify = JSON.stringify(param)
+		    localStorage.setItem("param",stringify)
+		    b.setWeather(res)
 			b.hidePreloader()
 			b.setCoordinates()
 			let dateUse = new Date()
-			return localStorage.setItem('time', dateUse.getTime())
+			localStorage.setItem('time', dateUse.getTime())
 		});
 	}else {
 		b.reset()
-		b.showPreloader()
-		let promise = new Promise(function(res,rej){
-			res(a.getMyWeather(localStorage.getItem("city")))
-	})
-		.then(res=>{
-			b.setWeather(res)
-			b.hidePreloader()
-			b.setCoordinates()
-		});
+		let parse = JSON.parse(localStorage.getItem("param"))
+		b.setWeather(parse)
+		b.setCoordinates()
+
 	}
 });
 
-	buttonForFind.addEventListener('click', function(){
+		buttonForFind.addEventListener('click', function(){
 		b.reset()
-	b.showPreloader()
+		b.showPreloader()
 
-	let promise = new Promise(function(res,rej){
+		let promise = new Promise(function(res,rej){
 		res(a.getMyIp())
 	})
 

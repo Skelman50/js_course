@@ -109,8 +109,8 @@ export default class Dom {
 	reset() {
 		this.point.style.left = "536px";
 		this.point.style.top = "265px";
-		this.long = undefined;
-		this.lat = undefined;
+		/*this.long = undefined;
+		this.lat = undefined;*/
 		this.point.style.display = "none";
 		if (this.openweather) {
 			this.openweather.remove()
@@ -121,7 +121,6 @@ export default class Dom {
 		this.long = param.coord.lon
 		this.lat = param.coord.lat
 		this.h1 = document.createElement('h1');
-		this.body.append(this.h1)
 		this.temperature = param.main.temp-273;
 		this.pressure = param.main.pressure;
 		this.windSpeed = param.wind.speed;
