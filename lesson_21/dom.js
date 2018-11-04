@@ -1,4 +1,6 @@
 
+import src from "./map.png"
+
 export default class Dom {
 	constructor(){
 	
@@ -7,7 +9,7 @@ export default class Dom {
 
 	showMap() {
 		this.map = document.getElementById('map')
-		this.map.style.background = 'url(http://wiki.gis-lab.info/images/c/c8/AGentleIntroductionToGIS_RU_html_75cd0dad.png) no-repeat 50% 50% / 101.5% 101.5%';
+		this.map.style.background = `url(${src}) no-repeat 50% 50% / 101.5% 101.5%`;
 		this.map.style.width = ""+(360*3)+"px";
 		this.map.style.height = ""+(180*3)+"px";
 		this.map.style.position = "relative";
