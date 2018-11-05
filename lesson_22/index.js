@@ -196,6 +196,7 @@ clear.addEventListener('click',function(){
 				toClearArr[i].remove();
 			}
 			toClear()
+			countChecked = 0;
 });
 
 
