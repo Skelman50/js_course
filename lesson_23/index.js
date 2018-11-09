@@ -95,5 +95,6 @@ height.addEventListener('input', function(){
 					search.disabled=false;
 					width.disabled=false;
 					height.disabled=false;
+				
 		})
 	})
