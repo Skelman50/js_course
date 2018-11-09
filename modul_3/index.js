@@ -58,6 +58,7 @@ if (name.value.length >= 2 && inputCard.value.match(/^(\d{4}-){3}\d{4}/)) {
 })
 
 btn.addEventListener('click', function(){
+	let result = UIController.input._visibleValue.split('-').join('')
 	table.innerText = 'LOADING...'
 	fetch (`https://api.bincodes.com/cc/?format=json&api_key=d96ca493f5be297f8c304a87edcdf6a8&cc=${result}`)
 	.then(res => res.json())
