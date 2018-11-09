@@ -54,6 +54,7 @@ let getStr = JSON.parse(localStorage.getItem("table"));
 	if (localStorage.getItem("table")) {
 		let clear = document.createElement('button')
 		clear.innerText = 'очистить'
+		clear.id = "clear"
 		divResult.append(clear)
 		clear.addEventListener('click',function(){
 			table.innerText = "";
