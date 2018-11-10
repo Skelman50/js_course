@@ -50,6 +50,7 @@ let getStr = JSON.parse(localStorage.getItem("table"));
 			if (getStr[key]==="") {
 				td2.innerText = "Unknown"
 			}
+			
 		}
 	if (localStorage.getItem("table")) {
 		let clear = document.createElement('button')
