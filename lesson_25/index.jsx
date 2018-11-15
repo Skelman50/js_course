@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// n | suits | nominal | color
-// 1 | hurts | 10 | red
-// 2 | clabs | queen | black
+
 let arr = []
 function Imagies(props){
   return(
+    <div>
     <img src={`https://dummyimage.com/250x250/000/fff&text=${props.word}`} />
+    </div>
   )
 }
 
