@@ -4,50 +4,54 @@ import ReactDOM from 'react-dom';
 // n | suits | nominal | color
 // 1 | hurts | 10 | red
 // 2 | clabs | queen | black
-
-
-
-
-function Imagies (props){
-    return (
-        <img src={`https://dummyimage.com/250x250/000/fff&text=${props.word}`} />
-      )
- }
-
-function Show(){
-
-  return (
-      
-    <div>
-      <div id="header"></div>
-      <input id="input" type="text"></input>
-      <button onClick=
-      {function Asd(){
-          new Promise(function(res,rej){
-          res(fetch (`https://api.datamuse.com/words?ml=${document.getElementById('input').value}`));
-        })
-        .then(res => res.json())
-        .then(function(res) {
-         res.map(function(elem) {
-         function SSD() {
-           return (
-             <div>
-              <Imagies {...elem} />
-             </div>
-           )
-         }
-        ReactDOM.render(<SSD/>,document.getElementById('img'))
-      })
-     
-     })
-          }}>Отобразить</button>    
-      <div id="img"></div>
-     </div>
+let arr = []
+function Imagies(props){
+  return(
+    <img src={`https://dummyimage.com/250x250/000/fff&text=${props.word}`} />
   )
 }
 
-/*dfddf*/
+function Show(){
+  return(
+    <div> 
+      <div id="header"></div>
+    <input id="input"></input>
+    <button onClick={asd}>Нажать</button>
+    <div id='img'></div>
+    </div>
+   
+  )
+}
+
 ReactDOM.render(<Show />,document.getElementById('root'))
+
+function asd(){
+  new Promise(function(res,rej){
+    res(fetch (`https://api.datamuse.com/words?ml=${document.getElementById('input').value}`));
+  })
+  .then(res => res.json())
+  .then(res=>res.map(function(element){
+    arr.push(element)
+    return arr;
+   }))
+   .then(function(res) {
+   function ShowIMG(){
+    return(
+      <div>
+      {arr.map((element,index)=>(
+        <Imagies key={index} {...element} />
+      ))}
+      </div>
+    )
+  }
+  
+  ReactDOM.render(<ShowIMG />,document.getElementById('img'))
+} 
+    
+    )
+    .then(res=>arr=[])
+  
+}
 
 function tick() {
   const element = (
@@ -60,4 +64,7 @@ function tick() {
 }
 
 setInterval(tick, 1000);
+
+
+
 
